@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AirIndx — Air Quality Index</title>
+
+    <!-- Font Awesome for the icons used by the design -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header">
+        <div class="logo">
+          <i class="fas fa-globe-americas"></i>
+          <span>UIndx</span>
+        </div>
+
+        <nav class="nav">
+          <a href="#air-quality">Air Quality</a>
+          <a href="#monitors">Monitors</a>
+          <a href="#about">About</a>
+          <button class="btn-primary" id="getStarted">Get Started</button>
+        </nav>
+      </header>
+
+      <main class="main-content" id="air-quality">
+        <section class="left-panel">
+          <h1 class="title">Air Quality <span class="light">Index</span></h1>
+
+          <div class="subtitle">
+            <div id="datetime">Loading date...</div>
+            <div>Local → <span id="location">Delhi, IND</span></div>
+          </div>
+
+          <form class="search-box" id="searchForm">
+            <i class="fas fa-search"></i>
+            <input
+              type="text"
+              id="citySearch"
+              placeholder="Search city..."
+              autocomplete="off"
+            />
+            <button type="submit" id="searchButton" class="btn-search">
+              Search
+            </button>
+          </form>
+
+          <div class="card">
+            <div class="card-title">Main Statistics</div>
+
+            <div class="muted-label">AQI</div>
+
+            <div class="aqi-display" id="mainAqi"></div>
+
+            <div class="info-row">
+              <span><strong>Dominant Pollutant</strong></span>
+              <span id="pollutant"></span>
+            </div>
+          </div>
+
+          <div class="risk-card">
+            <div class="risk-header">
+              <div class="card-title">Risk of Pollution</div>
+              <button type="button" class="btn-secondary" id="detailsButton">
+                Details
+              </button>
+            </div>
+
+            <div class="muted-label">Risk</div>
+            <div class="risk-value" id="risk"></div>
+
+            <div class="risk-description" id="riskDesc">
+              Loading air quality information...
+            </div>
+          </div>
+
+          <div class="loading" id="loading">
+            <i class="fas fa-spinner fa-spin fa-2x"></i>
+            <p>Loading air quality...</p>
+          </div>
+
+          <div class="error-message" id="errorMessage" role="alert"></div>
+        </section>
+
+        <section class="right-panel" id="monitors">
+          <div class="globe-container">
+            <div class="globe" aria-label="AQI visual globe">
+              <div class="globe-glow"></div>
+              <div class="globe-grid globe-grid-1"></div>
+              <div class="globe-grid globe-grid-2"></div>
+              <div class="marker" id="marker">--</div>
+            </div>
+
+            <div class="aqi-badge" id="badge">--</div>
+
+            <div class="popup" id="popup">
+              <div class="popup-header">
+                <i class="fas fa-circle popup-dot"></i>
+                <span id="popupCity">Jakarta, Indonesia</span>
+                <span class="popup-details">Details</span>
+              </div>
+
+              <div class="popup-aqi">
+                <div class="popup-value" id="popupAqi"></div>
+                <div class="popup-status" id="popupStatus">Loading</div>
+              </div>
+            </div>
+
+            <div class="controls">
+              <button type="button" class="btn-control" id="globeButton">
+                3D GLOBE
+              </button>
+              <button type="button" class="btn-control" id="mapButton">
+                IQ AIR MAP
+              </button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer id="about">
+        <span>Live air-quality monitor</span>
+        <span>Powered by OpenWeather</span>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
