@@ -8,7 +8,7 @@ A modern and responsive **Air Quality Index (AQI) Dashboard** that uses live API
 
 ## 🚀 Live Demo
 
-🔗 **Live Demo:** 
+🔗 **Live Demo:** https://uindx-air-quality.vercel.app/
 💻 **GitHub:** 
 
 ---
